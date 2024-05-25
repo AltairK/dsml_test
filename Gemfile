@@ -47,6 +47,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'rspec-rails', '~> 6.1.0'
 end
 
 group :development do
@@ -58,6 +59,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller', platforms: %i[mri_19 mri_20 mri_21 rbx]
 end
 
 group :test do
