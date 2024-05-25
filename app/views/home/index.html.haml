@@ -1,1 +1,34 @@
-example
+- if current_user
+  = button_to 'Sign out', destroy_user_session_path, :method => "delete"
+  = link_to 'Create task', new_task_path, :method => "get"
+- else
+  = button_to 'Sign in', new_user_session_path
+  = button_to 'Sign up', new_user_registration_path
+
+%hr
+%table{ style: "border: 1px solid black" }
+  %thead
+    %tr
+      %td{ style: "border: 1px solid black" }
+        = I18n.t :id
+      %td{ style: "border: 1px solid black" }
+        = I18n.t :email
+      %td{ style: "border: 1px solid black" }
+        = I18n.t :type
+      %td{ style: "border: 1px solid black" }
+        = I18n.t :content
+      %td{ style: "border: 1px solid black" }
+        = I18n.t :status
+  %tbody
+    - @tasks.each do |task|
+      %tr
+        %td{ style: "border: 1px solid black" }
+          = task.id
+        %td{ style: "border: 1px solid black" }
+          = task.user.email
+        %td{ style: "border: 1px solid black" }
+          = I18n.t task.task_type
+        %td{ style: "border: 1px solid black" }
+          = task.content
+        %td{ style: "border: 1px solid black" }
+          = I18n.t task.status

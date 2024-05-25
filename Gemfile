@@ -76,3 +76,9 @@ gem 'devise', '~> 4.9'
 gem 'devise-i18n'
 gem 'sass-rails'
 gem 'haml'
+
+gem "faker", "~> 3.3"
+
+gem "russian", "~> 0.6.0"
+
+gem "inherited_resources", "~> 1.14"

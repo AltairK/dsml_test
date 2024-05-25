@@ -1,0 +1,10 @@
+ru:
+  id: '№'
+  email: 'E-Mail'
+  type: 'Тип заявки'
+  content: 'Содержание'
+  status: 'Статус заявки'
+  day_off: 'Отгул'
+  vacation: 'Отпуск'
+  true: 'Одобрено'
+  false: 'Запрещено'

@@ -3,6 +3,6 @@
 # Index class, show list of available applications
 class HomeController < ApplicationController
   def index
-    ap 'test'
+    @tasks = Task.all
   end
 end
