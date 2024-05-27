@@ -11,5 +11,8 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe TasksHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should have the content' do
+    visit '/'
+    expect(page).to have_content('Sign out\nCreate task\n№ E-Mail Тип заявки Содержание Статус заявки')
+  end
 end

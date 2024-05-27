@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_25_114420) do
     t.integer "user_id"
     t.integer "task_type", default: 0
     t.text "content", null: false
-    t.boolean "status", default: false
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"

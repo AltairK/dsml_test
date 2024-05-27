@@ -1,0 +1,8 @@
+=link_to "Go Back", :root
+%br
+%hr
+= semantic_form_for Task.new, url: tasks_path, html: {method: :post} do |f|
+  = f.input :task_type, as: :select
+  = f.input :content
+  = f.action :submit, as: :button
+  = f.action :cancel, as: :link

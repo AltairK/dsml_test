@@ -6,29 +6,36 @@
   = button_to 'Sign up', new_user_registration_path
 
 %hr
-%table{ style: "border: 1px solid black" }
+%table
   %thead
     %tr
-      %td{ style: "border: 1px solid black" }
+      %td
         = I18n.t :id
-      %td{ style: "border: 1px solid black" }
+      %td
         = I18n.t :email
-      %td{ style: "border: 1px solid black" }
+      %td
         = I18n.t :type
-      %td{ style: "border: 1px solid black" }
+      %td
         = I18n.t :content
-      %td{ style: "border: 1px solid black" }
+      %td
         = I18n.t :status
+      - if current_user && current_user.admin?
+        %td
+          &nbsp
   %tbody
     - @tasks.each do |task|
       %tr
-        %td{ style: "border: 1px solid black" }
+        %td
           = task.id
-        %td{ style: "border: 1px solid black" }
+        %td
           = task.user.email
-        %td{ style: "border: 1px solid black" }
+        %td
           = I18n.t task.task_type
-        %td{ style: "border: 1px solid black" }
+        %td
           = task.content
-        %td{ style: "border: 1px solid black" }
+        %td
           = I18n.t task.status
+        - if current_user && current_user.admin? && task.status == 'pending'
+          %td
+            = button_to I18n.t(:approve), actions_path(task.id), params: { act: 1 }, method: "post"
+            = button_to I18n.t(:unapprove), actions_path(task.id), params: { act: 2 }, method: "post"

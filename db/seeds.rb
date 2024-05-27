@@ -1,8 +1,10 @@
 require 'faker'
 
 User.create email: 'admin@test.ts',
-            password: 'qweqwe',
+            password: 'password',
             role: 1
+User.create email: 'emploee@test.ts',
+            password: 'password'
 
 20.times do
   User.create email: Faker::Internet.email,
@@ -14,5 +16,5 @@ end
   Task.create user_id: User.pluck(:id).sample,
               task_type: [0, 1].sample,
               content: Faker::Lorem.paragraphs(number: 1)[0],
-              status: [true, false].sample
+              status: [0,1,2].sample
 end

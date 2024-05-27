@@ -74,11 +74,17 @@ end
 
 gem 'devise', '~> 4.9'
 gem 'devise-i18n'
-gem 'sass-rails'
 gem 'haml'
+gem 'sass-rails'
 
-gem "faker", "~> 3.3"
+gem 'faker', '~> 3.3'
 
-gem "russian", "~> 0.6.0"
+gem 'russian', '~> 0.6.0'
 
-gem "inherited_resources", "~> 1.14"
+gem 'dartsass-rails'
+
+gem 'bootstrap', '~> 5.3'
+
+gem 'mini_racer', '~> 0.12.0'
+
+gem "formtastic", "~> 5.0"

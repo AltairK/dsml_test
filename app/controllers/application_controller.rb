@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-  inherit_resources
+  # inherit_resources
 end

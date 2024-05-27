@@ -8,3 +8,7 @@ ru:
   vacation: 'Отпуск'
   true: 'Одобрено'
   false: 'Запрещено'
+  actions: 'Действия'
+  pending: 'Ожидание'
+  approve: 'Подтверждено'
+  unapprove: 'Отклонено'

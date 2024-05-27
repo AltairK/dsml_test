@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root to: 'tasks#index'
   get 'up' => 'rails/health#show', as: :rails_health_check
   resource :tasks
+  post 'tasks/:id/actions', to: 'tasks#actions', as: 'actions'
 end
