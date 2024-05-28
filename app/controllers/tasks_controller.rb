@@ -7,8 +7,12 @@ class TasksController < ApplicationController
   end
 
   def create
+    admins = User.where role: 'admin'
     params.permit!
     Task.create params[:task].merge!(user_id: current_user.id, status: 0)
+    admins.each do |admin|
+      TaskMailer.mailer(admin, current_user).deliver_now
+    end
     redirect_to root_path
   end
 

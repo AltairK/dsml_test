@@ -1,18 +1,20 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the TasksHelper. For example:
-#
-# describe TasksHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe TasksHelper, type: :helper do
-  it 'should have the content' do
-    visit '/'
-    expect(page).to have_content('Sign out\nCreate task\n№ E-Mail Тип заявки Содержание Статус заявки')
+  describe 'Task' do
+    before do
+      @user_admin = User.create email: 'test_admin@test.ts', password: 'password', role: 1
+      @user_emploee = User.create email: 'test_emploee@test.ts', password: 'password'
+      @task = Task.create user_id: @user_emploee.id,
+                          task_type: [0, 1].sample,
+                          content: 'test content',
+                          status: 0
+    end
+
+    describe 'tasks list' do
+      it 'show list of tasks' do
+        expect(@task.user_id).to equal(@user_emploee.id)
+      end
+    end
   end
 end

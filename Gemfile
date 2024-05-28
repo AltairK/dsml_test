@@ -49,6 +49,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'rspec-rails', '~> 6.1.0'
   gem 'simplecov', require: false
+  gem 'awesome_print'
 end
 
 group :development do
@@ -60,7 +61,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'html2haml'
